@@ -1,0 +1,17 @@
+body{
+	padding: 50px;
+}
+
+table, th, td {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  padding:5px;
+}
+.venue-wrap {padding-right: 70px;}
+.custom-tiles {position: absolute;right: 50px;top: 50%;transform: translateY(-50%);}
+.relative-cell {position: relative;}
+.edit, .delete {display: inline-block;height: 15px;width: 15px;margin: 0 5px;cursor: pointer;}
+.edit {background: url('../images/edit.png') no-repeat;background-position: center;background-size: cover;}
+.delete {background: url('../images/delete.png') no-repeat;background-position: center;background-size: cover;}

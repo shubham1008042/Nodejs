@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/show.css">
+
+ </head>
+  <body>
+    <h1>Venue List:</h2>
+    <div class="venue-wrap">
+      <table style="width:100%">
+        <tr>
+          <th>Id</th>
+          <th>Venue_Name</th>
+          <th>VariableId</th>
+          <th>Action</th>
+        </tr>
+
+        <% for(var i =0;i < venueList.length; i++){ %>
+           <tr>
+            <td><%= venueList[i].id %></a> </td>
+            <td> <%= venueList[i].venue_name %></td>
+            <td>  <%= venueList[i].variableid %></td>
+            <td class="relative-cell">
+              <span class="custom-tiles">
+                <a class="edit"  title="edit" href="/venue/<%= venueList[i].id %>" > </a>               
+                <a class="delete" title="delete" href="/venues/<%= venueList[i].id %>" ></a>
+              </span>
+            </td>
+          </tr>
+          <% } %>     
+      </table>
+    </div>
+  </body>
+</html>
