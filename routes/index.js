@@ -31,7 +31,7 @@ router.post('/add/submit', function(req, res) {
   res.write('You sent the variable Id "' + req.body.variableid+'".\n');
 
   var sql = "INSERT INTO zapvenue(`venue_name`,`variableid`) VALUES ('"+req.body.venue_name+"','"+req.body.variableid+"')";
-   // var sql="UPDATE venues SET venue_name=?,variableid=?"
+  
   con.query(sql, function(err, result)  {
    // if(err) throw err;
    console.log("1 Record added")
@@ -102,13 +102,11 @@ var sql="SELECT * FROM zapvenue WHERE id=" + hii;
 	  	}
 	  }
 	  	// console.log(venueList);
-	  	// Render index.pug page using array 
+	  	
 	  	res.render('edit', {"venueList": venueList});
 	
 
 });
-	// Close the MySQL connection
-	// con.end();
 
 });
 
@@ -118,7 +116,7 @@ router.post('/venue/(:id)',function(req,res){
 	var variableId = req.body.variableid;
 	var id=req.body.id;
 
-	// res.write('You sent the Id "' + req.body.id+'".\n')
+	
 	 res.write('You updated the variable Id "' + req.body.variableid+'".\n')
 
 
@@ -202,26 +200,5 @@ router.get('/show/livedata',function(req,res){
 });
 
 
-// router.get('/show/livedata',function(req,res,next){
-// 	var service = require('../service.js');
-
-// 	var mine;
-
-// 	//Fetching Datasources 
-// 	service.getDataSources().then(function(datasources){
-// 	 	return service.getDataSourceVariables(datasources[0].id)
-// 	}).then(function(variables){
-// 	//Fetching Variables
-// 	 	return service.getValuesFromVariable(variables[0].id)
-// 	}).then(function(value){
-// 	//Fetching Values
-	
-//     var mine = value.slice(0)[0].value;
-// 	console.log(mine);
-// 	  res.render('action',{'data':mine})
-// 	  next();
-// 		});
-	
-//  		});
 
 module.exports = router ;
