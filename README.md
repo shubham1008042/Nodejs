@@ -1,2 +1,2 @@
 # Nodejs
-In these above files, an apllication is made with express framework
+In these above files, an application is made with express framework
